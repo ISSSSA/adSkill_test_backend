@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import get_logs, get_log_detail, create_log
 
+from .views import get_logs, get_log_detail, create_log
 
 urlpatterns = [
     path('', get_logs, name='get_logs'),

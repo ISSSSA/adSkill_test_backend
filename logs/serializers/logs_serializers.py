@@ -7,3 +7,4 @@ class LogEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = LogEvent
         fields = '__all__'
+        read_only_fields = ['timestamp']

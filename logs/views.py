@@ -1,18 +1,19 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+
 from .models import LogEvent
-from .serializers.serializers import LogEventSerializer
+from .serializers.logs_serializers import LogEventSerializer
 
 
 @api_view(['GET'])
-def get_logs(request):
+def get_logs(request) -> Response:
     logs = LogEvent.objects.all()
     serializer = LogEventSerializer(logs, many=True)
     return Response({"logs": serializer.data})
 
 
 @api_view(['GET'])
-def get_log_detail(request, log_id):
+def get_log_detail(request, log_id) -> Response:
     try:
         log = LogEvent.objects.get(id=log_id)
         serializer = LogEventSerializer(log)
@@ -22,7 +23,7 @@ def get_log_detail(request, log_id):
 
 
 @api_view(['POST'])
-def create_log(request):
+def create_log(request) -> Response:
     serializer = LogEventSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
