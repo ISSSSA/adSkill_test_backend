@@ -1,0 +1,60 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /logs/:
+    get:
+      operationId: listget_logs
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - logs
+  /logs/{log_id}/:
+    get:
+      operationId: retrieveget_log_detail
+      description: ''
+      parameters:
+      - name: log_id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - logs
+  /logs/content/create/:
+    post:
+      operationId: createcreate_log
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - logs
