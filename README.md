@@ -1,15 +1,15 @@
 # Установка зависимостей:
-```cmd pip install -r requirements.txt```
+```pip install -r requirements.txt```
 
  *В проекте используется БД SQLite, поскольку более мощные решения по типу PostgreSQL будут изыбточны*
 
 # Проведение миграций:
 Посrольку в приложение уже лежат миграций созданные мной при разработке, то нужно просто:
-```cmd python manage.py makemigrations```
+```python manage.py makemigrations```
 
 # Запуск веб приложения:
 Для запуска, надо написать:
-```cmd python manage.py runserver```
+```python manage.py runserver```
 Приложение по стандарту запуститься на localhost
 Порт: 8000
 # API:
